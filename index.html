@@ -11,42 +11,44 @@
     * { font-family: 'Noto Kufi Arabic', 'Amiri', sans-serif; }
     
     .gradient-bg {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 50%, #16213e 100%);
     }
     
     .card-glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(212, 168, 83, 0.15);
     }
     
-    .gold-accent { color: #d4a853; }
-    .gold-bg { background: linear-gradient(135deg, #d4a853 0%, #c9a227 100%); }
+    .gold-accent { color: #f4d03f; }
+    .gold-bg { background: linear-gradient(135deg, #f4d03f 0%, #e8b923 100%); }
     
     .section-card {
-      background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
-      border: 1px solid rgba(212, 168, 83, 0.2);
+      background: linear-gradient(145deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%);
+      border: 1px solid rgba(244, 208, 63, 0.25);
       transition: all 0.3s ease;
     }
     
     .section-card:hover {
-      border-color: rgba(212, 168, 83, 0.5);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 40px rgba(212, 168, 83, 0.1);
+      border-color: rgba(244, 208, 63, 0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 50px rgba(244, 208, 63, 0.15);
+      background: linear-gradient(145deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
     }
     
     .table-row:hover {
-      background: rgba(212, 168, 83, 0.1);
+      background: rgba(244, 208, 63, 0.12);
     }
     
     .time-badge {
-      background: linear-gradient(135deg, #d4a853 0%, #b8942d 100%);
-      animation: pulse-glow 2s infinite;
+      background: linear-gradient(135deg, #f4d03f 0%, #e8b923 100%);
+      animation: pulse-glow 2.5s infinite;
+      box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3);
     }
     
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 10px rgba(212, 168, 83, 0.3); }
-      50% { box-shadow: 0 0 20px rgba(212, 168, 83, 0.6); }
+      0%, 100% { box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3); }
+      50% { box-shadow: 0 4px 25px rgba(244, 208, 63, 0.5); }
     }
     
     .nav-item {
@@ -61,7 +63,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: #d4a853;
+      background: #f4d03f;
       transition: all 0.3s ease;
       transform: translateX(-50%);
     }
@@ -96,8 +98,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(212, 168, 83, 0.2) 0%, rgba(212, 168, 83, 0.1) 100%);
-      border: 1px solid rgba(212, 168, 83, 0.3);
+      background: linear-gradient(135deg, rgba(244, 208, 63, 0.25) 0%, rgba(244, 208, 63, 0.15) 100%);
+      border: 2px solid rgba(244, 208, 63, 0.4);
+      box-shadow: 0 0 20px rgba(244, 208, 63, 0.15);
     }
     
     .progress-line {
@@ -106,13 +109,13 @@
       top: 60px;
       bottom: 20px;
       width: 2px;
-      background: linear-gradient(to bottom, rgba(212, 168, 83, 0.5), rgba(212, 168, 83, 0.1));
+      background: linear-gradient(to bottom, rgba(244, 208, 63, 0.6), rgba(244, 208, 63, 0.1));
     }
     
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+    ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.03); }
     ::-webkit-scrollbar-thumb { 
-      background: linear-gradient(to bottom, #d4a853, #b8942d); 
+      background: linear-gradient(to bottom, #f4d03f, #e8b923); 
       border-radius: 4px; 
     }
   </style>
@@ -120,15 +123,13 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full gradient-bg text-white overflow-auto">
-  <div id="app" class="h-full w-full">
-   <!-- Header -->
+  <div id="app" class="h-full w-full"><!-- Header -->
    <header class="sticky top-0 z-50 card-glass">
     <div class="max-w-7xl mx-auto px-4 py-4">
      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-4">
        <div class="w-14 h-14 rounded-full gold-bg flex items-center justify-center shadow-lg">
-        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
        </div>
        <div>
@@ -136,31 +137,26 @@
         <p id="exam-period" class="text-sm text-gray-400">امتحانات الميدترم – مارس 2026</p>
        </div>
       </div><!-- Navigation -->
-      <nav class="flex flex-wrap justify-center gap-2 md:gap-4">
-       <button onclick="scrollToSection('before')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">قبل الامتحان</button> <button onclick="scrollToSection('during')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">أثناء وبعد</button> <button onclick="scrollToSection('correction')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">التصحيح</button> <button onclick="scrollToSection('review')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">المراجعة</button>
+      <nav class="flex flex-wrap justify-center gap-2 md:gap-4"><button onclick="scrollToSection('before')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">قبل الامتحان</button> <button onclick="scrollToSection('during')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">أثناء وبعد</button> <button onclick="scrollToSection('correction')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">التصحيح</button> <button onclick="scrollToSection('review')" class="nav-item px-3 py-2 text-sm hover:text-yellow-400 transition-colors">المراجعة</button>
       </nav>
      </div>
     </div>
    </header>
-   <main class="max-w-7xl mx-auto px-4 py-8 space-y-8">
-    <!-- Section 1: قبل بدء الامتحان -->
+   <main class="max-w-7xl mx-auto px-4 py-8 space-y-8"><!-- Section 1: قبل بدء الامتحان -->
     <section id="before" class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">١</span>
+      <div class="icon-circle"><span class="text-2xl">١</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">أولاً: قبل بدء الامتحان</h2>
      </div>
-     <div class="grid gap-6">
-      <!-- تسليم أوراق الامتحانات -->
+     <div class="grid gap-6"><!-- تسليم أوراق الامتحانات -->
       <div class="section-card rounded-2xl p-6">
        <div class="flex items-start gap-4 mb-4">
-        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="text-lg font-bold">1</span>
+        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0"><span class="text-lg font-bold">1</span>
         </div>
         <div class="flex-1">
-         <h3 class="text-xl font-semibold mb-2">📄 تسليم أوراق الامتحانات</h3>
-         <p class="text-gray-400 text-sm mb-4">يتم تسليم ورق الامتحانات إلى مسؤول المادة في لجنة التحريري المجمعة حسب الجداول المرفقة.</p>
+         <h3 class="text-xl font-semibold mb-2">📄 توزيع مسؤولي لجان الامتحان التحريري</h3>
+         <p class="text-gray-400 text-sm mb-4">تسليم أوراق الامتحانات إلى مسؤول اللجنة في التحريري المجمعة:</p>
          <div class="overflow-x-auto">
           <table class="w-full text-sm">
            <thead>
@@ -173,7 +169,7 @@
            <tbody>
             <tr class="table-row border-b border-white/5 transition-colors">
              <td class="py-3 px-4 font-medium">ثالثة ورابعة</td>
-             <td class="py-3 px-4">👤 مريم فؤاد</td>
+             <td class="py-3 px-4">👤 يؤنا ملاك</td>
              <td class="py-3 px-4 text-gray-400 text-xs" rowspan="4">
               <ul class="space-y-1">
                <li>• تسجيل الغياب وتسليمه للكنترول</li>
@@ -203,70 +199,69 @@
       </div><!-- تسليم استمارة السلوك -->
       <div class="section-card rounded-2xl p-6">
        <div class="flex items-start gap-4 mb-4">
-        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="text-lg font-bold">2</span>
+        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0"><span class="text-lg font-bold">2</span>
         </div>
         <div class="flex-1">
-         <h3 class="text-xl font-semibold mb-2">📋 تسليم استمارة السلوك</h3>
-         <p class="text-gray-400 text-sm mb-4">يتم تسليم ورق السلوك لمواد: <span class="text-yellow-400">(الطقس – المحفوظات – اللغة القبطية)</span> إلى مسؤولي الفصول.</p>
+         <h3 class="text-xl font-semibold mb-2">📋 توزيع استمارة سلوك الدارس</h3>
+         <p class="text-gray-400 text-sm mb-4">تسليم ورق السلوك لمواد: <span class="text-yellow-400">(الطقس – المحفوظات – اللغة القبطية)</span> إلى مسؤولي الفصول:</p>
          <div class="overflow-x-auto">
           <table class="w-full text-sm">
            <thead>
             <tr class="border-b border-yellow-900/30">
              <th class="py-3 px-4 text-right gold-accent">الفصل</th>
-             <th class="py-3 px-4 text-right gold-accent">المسؤول</th>
-             <th class="py-3 px-4 text-right gold-accent">المهام</th>
+             <th class="py-3 px-4 text-right gold-accent">الطقوس الكنسية</th>
+             <th class="py-3 px-4 text-right gold-accent">المحفوظات والأجبية</th>
+             <th class="py-3 px-4 text-right gold-accent">اللغة القبطية</th>
             </tr>
            </thead>
            <tbody>
             <tr class="table-row border-b border-white/5 transition-colors">
              <td class="py-3 px-4 font-medium">ثالثة ورابعة</td>
-             <td class="py-3 px-4">👤 مريم فؤاد</td>
-             <td class="py-3 px-4 text-gray-400 text-xs" rowspan="4">
-              <ul class="space-y-1">
-               <li>• تسجيل الدرجات في استمارة السلوك</li>
-               <li>• تسليم الاستمارة للكنترول</li>
-              </ul></td>
+             <td class="py-3 px-4">جومانا عماد</td>
+             <td class="py-3 px-4">يؤنا ملاك</td>
+             <td class="py-3 px-4">مينا ميخائيل</td>
             </tr>
             <tr class="table-row border-b border-white/5 transition-colors">
              <td class="py-3 px-4 font-medium">خامسة وسادسة</td>
-             <td class="py-3 px-4">👤 اندرو هاني</td>
+             <td class="py-3 px-4">اندرو هاني</td>
+             <td class="py-3 px-4">توماس ماجد</td>
+             <td class="py-3 px-4">بسنت ناصر</td>
             </tr>
             <tr class="table-row border-b border-white/5 transition-colors">
              <td class="py-3 px-4 font-medium">أعدادي - ثانوي</td>
-             <td class="py-3 px-4">👤 كريستين كمال</td>
+             <td class="py-3 px-4">كريستين كمال</td>
+             <td class="py-3 px-4">ساندي ملاك</td>
+             <td class="py-3 px-4">نانسي يوسف</td>
             </tr>
             <tr class="table-row border-b border-white/5 transition-colors">
              <td class="py-3 px-4 font-medium">شباب وخريجين</td>
-             <td class="py-3 px-4">👤 ماريان عهدي</td>
+             <td class="py-3 px-4">ماريان عهدي</td>
+             <td class="py-3 px-4">ماريان عهدي</td>
+             <td class="py-3 px-4">مارينا ماهر</td>
             </tr>
            </tbody>
           </table>
          </div>
-         <div class="mt-4 flex items-center gap-2">
-          <span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ الموعد النهائي: 4:30 مساءً</span>
+         <div class="mt-4 flex items-center gap-2"><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ الموعد النهائي: 4:30 مساءً</span>
          </div>
         </div>
        </div>
       </div><!-- تسليم كشف الغياب -->
       <div class="section-card rounded-2xl p-6">
        <div class="flex items-start gap-4">
-        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="text-lg font-bold">3</span>
+        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0"><span class="text-lg font-bold">3</span>
         </div>
         <div class="flex-1">
          <h3 class="text-xl font-semibold mb-2">📝 تسليم كشف الغياب</h3>
          <p class="text-gray-400 text-sm mb-4">يتم تسليم كشف الغياب لمسؤول اللجنة لتسجيل غياب الدارسين داخل اللجنة.</p>
-         <div class="flex items-center gap-2">
-          <span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ الموعد النهائي: 4:30 مساءً</span>
+         <div class="flex items-center gap-2"><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ الموعد النهائي: 4:30 مساءً</span>
          </div>
         </div>
        </div>
       </div><!-- تسليم استمارات التقييم الشفوي -->
       <div class="section-card rounded-2xl p-6">
        <div class="flex items-start gap-4 mb-4">
-        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="text-lg font-bold">4</span>
+        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0"><span class="text-lg font-bold">4</span>
         </div>
         <div class="flex-1">
          <h3 class="text-xl font-semibold mb-2">🎤 تسليم استمارات التقييم الشفوي</h3><!-- جدول حضانة - أولي وثانية -->
@@ -339,29 +334,25 @@
     </section><!-- Section 2: أثناء وبعد انتهاء لجنة التحريري -->
     <section id="during" class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">٢</span>
+      <div class="icon-circle"><span class="text-2xl">٢</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">ثانياً: أثناء وبعد انتهاء لجنة التحريري</h2>
      </div>
      <div class="grid md:grid-cols-3 gap-6">
       <div class="section-card rounded-2xl p-6 text-center">
-       <div class="w-16 h-16 mx-auto mb-4 rounded-full gold-bg flex items-center justify-center">
-        <span class="text-3xl">📋</span>
+       <div class="w-16 h-16 mx-auto mb-4 rounded-full gold-bg flex items-center justify-center"><span class="text-3xl">📋</span>
        </div>
        <h3 class="text-lg font-semibold mb-2">استلام كشوف الغياب</h3>
        <p class="text-gray-400 text-sm mb-4">من مسؤولي اللجان</p><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ 4:30 مساءً</span>
       </div>
       <div class="section-card rounded-2xl p-6 text-center">
-       <div class="w-16 h-16 mx-auto mb-4 rounded-full gold-bg flex items-center justify-center">
-        <span class="text-3xl">📄</span>
+       <div class="w-16 h-16 mx-auto mb-4 rounded-full gold-bg flex items-center justify-center"><span class="text-3xl">📄</span>
        </div>
        <h3 class="text-lg font-semibold mb-2">استلام أوراق الامتحانات</h3>
        <p class="text-gray-400 text-sm mb-4">من مسؤول كل لجنة بالعدد</p><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ 5:00 مساءً</span>
       </div>
       <div class="section-card rounded-2xl p-6 text-center">
-       <div class="w-16 h-16 mx-auto mb-4 rounded-full gold-bg flex items-center justify-center">
-        <span class="text-3xl">🎤</span>
+       <div class="w-16 h-16 mx-auto mb-4 rounded-full gold-bg flex items-center justify-center"><span class="text-3xl">🎤</span>
        </div>
        <h3 class="text-lg font-semibold mb-2">استلام استمارات الشفوي</h3>
        <p class="text-gray-400 text-sm mb-4">مادة المحفوظات</p><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ 5:30 مساءً</span>
@@ -370,29 +361,24 @@
     </section><!-- Section 3: تجهيز التصحيح -->
     <section id="correction" class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">٣</span>
+      <div class="icon-circle"><span class="text-2xl">٣</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">ثالثاً: تجهيز التصحيح</h2>
      </div>
      <div class="section-card rounded-2xl p-6 mb-6">
       <h3 class="text-lg font-semibold mb-4 text-yellow-400">📁 محتويات فايل التصحيح لكل خادم:</h3>
       <div class="grid md:grid-cols-3 gap-4 mb-6">
-       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-        <span class="text-3xl mb-2 block">📝</span>
+       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10"><span class="text-3xl mb-2 block">📝</span>
         <p class="text-sm">أوراق الامتحان الخاصة بالمادة</p>
        </div>
-       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-        <span class="text-3xl mb-2 block">✅</span>
+       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10"><span class="text-3xl mb-2 block">✅</span>
         <p class="text-sm">نموذج الإجابة الخاص بالمادة</p>
        </div>
-       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-        <span class="text-3xl mb-2 block">📊</span>
+       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10"><span class="text-3xl mb-2 block">📊</span>
         <p class="text-sm">استمارة رصد درجات التحريري</p>
        </div>
       </div>
-      <div class="flex items-center justify-center gap-2 mb-6">
-       <span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ موعد التسليم: 5:30 مساءً</span>
+      <div class="flex items-center justify-center gap-2 mb-6"><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ موعد التسليم: 5:30 مساءً</span>
       </div>
      </div>
      <div class="section-card rounded-2xl p-6">
@@ -402,7 +388,8 @@
         <thead>
          <tr class="border-b border-yellow-900/30">
           <th class="py-3 px-4 text-right gold-accent">الفصل</th>
-          <th class="py-3 px-4 text-right gold-accent">الطقوس / المحفوظات</th>
+          <th class="py-3 px-4 text-right gold-accent">الطقوس الكنسية</th>
+          <th class="py-3 px-4 text-right gold-accent">المحفوظات والأجبية</th>
           <th class="py-3 px-4 text-right gold-accent">اللغة القبطية</th>
          </tr>
         </thead>
@@ -410,21 +397,25 @@
          <tr class="table-row border-b border-white/5 transition-colors">
           <td class="py-3 px-4 font-medium">ثالثة ورابعة</td>
           <td class="py-3 px-4">مريم فؤاد</td>
-          <td class="py-3 px-4">مينا ميخائيل</td>
+          <td class="py-3 px-4 text-gray-500">—</td>
+          <td class="py-3 px-4">رامز منير</td>
          </tr>
          <tr class="table-row border-b border-white/5 transition-colors">
           <td class="py-3 px-4 font-medium">خامسة وسادسة</td>
           <td class="py-3 px-4">ماريان عهدي</td>
+          <td class="py-3 px-4 text-gray-500">—</td>
           <td class="py-3 px-4">نانسي يوسف</td>
          </tr>
          <tr class="table-row border-b border-white/5 transition-colors">
           <td class="py-3 px-4 font-medium">أعدادي - ثانوي</td>
           <td class="py-3 px-4">اندرو هاني</td>
+          <td class="py-3 px-4 text-gray-500">—</td>
           <td class="py-3 px-4">مارينا ماهر</td>
          </tr>
          <tr class="table-row border-b border-white/5 transition-colors">
           <td class="py-3 px-4 font-medium">شباب وخريجين</td>
           <td class="py-3 px-4">كريستين كمال</td>
+          <td class="py-3 px-4 text-gray-500">—</td>
           <td class="py-3 px-4">بسنت ناصر</td>
          </tr>
         </tbody>
@@ -434,8 +425,7 @@
     </section><!-- Section 4: استلام أوراق التصحيح -->
     <section class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">٤</span>
+      <div class="icon-circle"><span class="text-2xl">٤</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">رابعاً: استلام أوراق التصحيح</h2>
      </div>
@@ -443,28 +433,23 @@
       <p class="text-gray-300 mb-4">بعد انتهاء التصحيح في مدة تقريبية حوالي <span class="text-yellow-400 font-bold">نصف ساعة</span>:</p>
       <p class="text-gray-400 mb-4">يقوم الكنترول باستلام فايل كل مادة من مسؤول التصحيح، ويشمل:</p>
       <div class="grid md:grid-cols-3 gap-4 mb-6">
-       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-        <span class="text-2xl mb-2 block">📝</span>
+       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10"><span class="text-2xl mb-2 block">📝</span>
         <p class="text-sm">أوراق الامتحان بعد التصحيح</p>
        </div>
-       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-        <span class="text-2xl mb-2 block">✅</span>
+       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10"><span class="text-2xl mb-2 block">✅</span>
         <p class="text-sm">نموذج الإجابة</p>
        </div>
-       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10">
-        <span class="text-2xl mb-2 block">📊</span>
+       <div class="bg-white/5 rounded-xl p-4 text-center border border-white/10"><span class="text-2xl mb-2 block">📊</span>
         <p class="text-sm">استمارة رصد درجات التحريري</p>
        </div>
       </div>
-      <div class="flex items-center justify-center">
-       <span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ موعد الاستلام: 6:00 مساءً</span>
+      <div class="flex items-center justify-center"><span class="time-badge px-4 py-2 rounded-full text-sm font-bold text-gray-900">⏰ موعد الاستلام: 6:00 مساءً</span>
       </div>
      </div>
     </section><!-- Section 5: المراجعة والرصد النهائي -->
     <section id="review" class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">٥</span>
+      <div class="icon-circle"><span class="text-2xl">٥</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">خامساً: المراجعة والرصد النهائي</h2>
      </div>
@@ -472,20 +457,17 @@
       <h3 class="text-lg font-semibold mb-4 text-yellow-400">✨ يقوم الكنترول بـ:</h3>
       <div class="space-y-4">
        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-        <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="font-bold">1</span>
+        <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center flex-shrink-0"><span class="font-bold">1</span>
         </div>
         <p>مراجعة درجات أوراق الامتحان</p>
        </div>
        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-        <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="font-bold">2</span>
+        <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center flex-shrink-0"><span class="font-bold">2</span>
         </div>
         <p>رصد الدرجات في شيت رصد الكنترول الخاص بكل مادة</p>
        </div>
        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
-        <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center flex-shrink-0">
-         <span class="font-bold">3</span>
+        <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center flex-shrink-0"><span class="font-bold">3</span>
         </div>
         <p>تجميع الدرجات النهائية</p>
        </div>
@@ -494,8 +476,7 @@
     </section><!-- Section 6: امتحان الألحان -->
     <section class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">🎵</span>
+      <div class="icon-circle"><span class="text-2xl">🎵</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">امتحان الألحان</h2>
      </div>
@@ -503,16 +484,20 @@
       <div class="section-card rounded-2xl p-6">
        <h3 class="text-lg font-semibold mb-4 text-yellow-400">🎼 خطوات التقييم:</h3>
        <div class="space-y-3">
-        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg"><span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">1</span>
+        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+         <span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">1</span>
          <p class="text-sm">تسليم استمارة تقييم الألحان إلى لجان الألحان</p>
         </div>
-        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg"><span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">2</span>
+        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+         <span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">2</span>
          <p class="text-sm">تقييم الدارسين حسب الإرشادات الموجودة</p>
         </div>
-        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg"><span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">3</span>
+        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+         <span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">3</span>
          <p class="text-sm">استخراج نتيجة إجمالية لكل دارس</p>
         </div>
-        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg"><span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">4</span>
+        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
+         <span class="w-6 h-6 rounded-full gold-bg flex items-center justify-center flex-shrink-0 text-sm font-bold">4</span>
          <p class="text-sm">تسليم الاستمارة كاملة إلى الكنترول</p>
         </div>
        </div>
@@ -534,30 +519,135 @@
        </div>
       </div>
      </div>
-    </section><!-- Section 7: تقسيم فريق الكنترول -->
+    </section><!-- Section 7: جداول توزيع الخدام -->
     <section class="fade-in">
      <div class="flex items-center gap-3 mb-6">
-      <div class="icon-circle">
-       <span class="text-2xl">👥</span>
+      <div class="icon-circle"><span class="text-2xl">📋</span>
+      </div>
+      <h2 class="text-2xl font-bold gold-accent">ملخص توزيع الخدام</h2>
+     </div>
+     <div class="grid gap-6"><!-- مراقبة لجنة الامتحان -->
+      <div class="section-card rounded-2xl p-6">
+       <h3 class="text-lg font-semibold mb-4 text-yellow-400">👁️ مراقبة لجنة الامتحان التحريري المجمع</h3>
+       <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+         <thead>
+          <tr class="border-b border-yellow-900/30">
+           <th class="py-3 px-4 text-right gold-accent">مسؤولو اللجان</th>
+           <th class="py-3 px-4 text-right gold-accent">المراقب الأول</th>
+           <th class="py-3 px-4 text-right gold-accent">المراقب الثاني</th>
+           <th class="py-3 px-4 text-right gold-accent">المراقب الثالث</th>
+           <th class="py-3 px-4 text-right gold-accent">المراقب الرابع</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr class="table-row border-b border-white/5 transition-colors">
+           <td class="py-3 px-4 font-medium">يؤنا ملاك</td>
+           <td class="py-3 px-4">يوسف نادر</td>
+           <td class="py-3 px-4">توماس ماجد</td>
+           <td class="py-3 px-4 text-gray-500">—</td>
+           <td class="py-3 px-4 text-gray-500">—</td>
+          </tr>
+          <tr class="table-row border-b border-white/5 transition-colors">
+           <td class="py-3 px-4 font-medium">كريستين كمال</td>
+           <td class="py-3 px-4">ماريان عهدي</td>
+           <td class="py-3 px-4">ميرنا مجدي</td>
+           <td class="py-3 px-4">مينا وهيب</td>
+           <td class="py-3 px-4 text-gray-500">—</td>
+          </tr>
+          <tr class="table-row border-b border-white/5 transition-colors">
+           <td class="py-3 px-4 font-medium">ماريان عهدي</td>
+           <td class="py-3 px-4">اندرو هاني</td>
+           <td class="py-3 px-4">كريستين كمال</td>
+           <td class="py-3 px-4">جومانا عماد</td>
+           <td class="py-3 px-4 text-gray-500">—</td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div><!-- النظام والحركة -->
+      <div class="section-card rounded-2xl p-6">
+       <h3 class="text-lg font-semibold mb-4 text-yellow-400">🚪 النظام والحركة</h3>
+       <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+         <p class="text-sm font-semibold text-yellow-400 mb-2">مسؤول الباب:</p>
+         <p class="text-lg font-bold">ابرام عاطف</p>
+        </div>
+        <div class="bg-white/5 rounded-xl p-4 border border-white/10">
+         <p class="text-sm font-semibold text-yellow-400 mb-2">حركة الدارسين للألحان:</p>
+         <div class="flex flex-wrap gap-2"><span class="inline-block bg-yellow-400/20 text-yellow-300 px-2 py-1 rounded text-xs">مينا وهيب</span> <span class="inline-block bg-yellow-400/20 text-yellow-300 px-2 py-1 rounded text-xs">ميرنا مجدي</span> <span class="inline-block bg-yellow-400/20 text-yellow-300 px-2 py-1 rounded text-xs">يوسف نادر</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- خدام لجنة الألحان -->
+      <div class="section-card rounded-2xl p-6">
+       <h3 class="text-lg font-semibold mb-4 text-yellow-400">🎵 خدام لجنة الألحان</h3>
+       <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm">
+         <thead>
+          <tr class="border-b border-yellow-900/30">
+           <th class="py-3 px-4 text-right gold-accent">الخادم 1</th>
+           <th class="py-3 px-4 text-right gold-accent">الخادم 2</th>
+           <th class="py-3 px-4 text-right gold-accent">الخادم 3</th>
+           <th class="py-3 px-4 text-right gold-accent">الخادم 4</th>
+           <th class="py-3 px-4 text-right gold-accent">الخادم 5</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr class="table-row border-b border-white/5 transition-colors">
+           <td class="py-3 px-4">ماريا شوكت</td>
+           <td class="py-3 px-4">ابانوب ايمن</td>
+           <td class="py-3 px-4">مينا عماد</td>
+           <td class="py-3 px-4">ابرام هاني</td>
+           <td class="py-3 px-4">بيشوي ملاك</td>
+          </tr>
+          <tr class="table-row border-b border-white/5 transition-colors">
+           <td colspan="5" class="py-3 px-4 text-sm text-gray-500">(مارينا ايهاب - خادم اضافي)</td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="bg-yellow-400/10 border border-yellow-400/30 rounded-xl p-4">
+        <p class="text-xs text-yellow-300 font-semibold mb-2">📌 ملاحظة مهمة عن درجات الألحان:</p>
+        <div class="text-xs text-gray-300 space-y-2">
+         <p>إذا كان عدد الألحان أقل أو أكثر من 5 ألحان:</p>
+         <ol class="list-decimal list-inside space-y-1 mr-2">
+          <li>يتم جمع الدرجات الفعلية للألحان التي تم امتحانها</li>
+          <li>يتم حساب الدرجة النهائية بالمعادلة:<br><span class="text-yellow-300 font-mono">(مجموع درجات الدارس ÷ الدرجة الكلية الفعلية) × 30</span></li>
+          <li>الناتج النهائي يجب أن يكون رقمًا صحيحًا (يتم التقريب لأقرب عدد صحيح)</li>
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Section 8: تقسيم فريق الكنترول -->
+    <section class="fade-in">
+     <div class="flex items-center gap-3 mb-6">
+      <div class="icon-circle"><span class="text-2xl">👥</span>
       </div>
       <h2 class="text-2xl font-bold gold-accent">تقسيم فريق الكنترول لوحدات</h2>
      </div>
      <p class="text-gray-300 mb-6 text-center">بدلاً من أن يعمل الجميع في كل شيء، يفضل تقسيم العمل على متخصصين في كل مرحلة:</p>
-     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4"><!-- مسؤول الاستلام -->
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- مسؤول الاستلام -->
       <div class="section-card rounded-2xl p-6 relative overflow-hidden">
        <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-400/10 rounded-bl-3xl"></div>
        <div class="relative z-10">
-        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4"><span class="text-xl">📥</span>
+        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4">
+         <span class="text-xl">📥</span>
         </div>
         <h3 class="text-lg font-bold mb-3 gold-accent">مسؤول الاستلام</h3>
         <div class="space-y-2">
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">استلام أوراق الامتحانات</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">استلام كشوف الغياب</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">مراجعة عدد الأوراق</p>
          </div>
         </div>
@@ -566,20 +656,25 @@
       <div class="section-card rounded-2xl p-6 relative overflow-hidden">
        <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-400/10 rounded-bl-3xl"></div>
        <div class="relative z-10">
-        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4"><span class="text-xl">📁</span>
+        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4">
+         <span class="text-xl">📁</span>
         </div>
         <h3 class="text-lg font-bold mb-3 gold-accent">مسؤول التجهيز</h3>
         <div class="space-y-2">
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">تجهيز فايلات المواد</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">وضع أوراق الامتحان</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">نموذج الإجابة</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">استمارة الرصد</p>
          </div>
         </div>
@@ -588,17 +683,21 @@
       <div class="section-card rounded-2xl p-6 relative overflow-hidden">
        <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-400/10 rounded-bl-3xl"></div>
        <div class="relative z-10">
-        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4"><span class="text-xl">🔍</span>
+        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4">
+         <span class="text-xl">🔍</span>
         </div>
         <h3 class="text-lg font-bold mb-3 gold-accent">مسؤول المراجعة</h3>
         <div class="space-y-2">
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">مراجعة التصحيح</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">التأكد من جمع الدرجات</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">مراقبة الجودة</p>
          </div>
         </div>
@@ -607,20 +706,25 @@
       <div class="section-card rounded-2xl p-6 relative overflow-hidden">
        <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-400/10 rounded-bl-3xl"></div>
        <div class="relative z-10">
-        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4"><span class="text-xl">📊</span>
+        <div class="w-12 h-12 rounded-lg gold-bg flex items-center justify-center mb-4">
+         <span class="text-xl">📊</span>
         </div>
         <h3 class="text-lg font-bold mb-3 gold-accent">مسؤول الرصد</h3>
         <div class="space-y-2">
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">إدخال الدرجات في الشيت</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">تجميع التحريري</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">درجات الواجب والسلوك</p>
          </div>
-         <div class="flex items-start gap-2"><span class="text-yellow-400 text-lg">•</span>
+         <div class="flex items-start gap-2">
+          <span class="text-yellow-400 text-lg">•</span>
           <p class="text-sm text-gray-300">حساب الغياب</p>
          </div>
         </div>
@@ -676,29 +780,25 @@
       <div class="progress-line hidden md:block"></div>
       <div class="grid md:grid-cols-4 gap-4">
        <div class="text-center p-4">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center">
-         <span class="text-xl">📋</span>
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center"><span class="text-xl">📋</span>
         </div>
         <p class="font-bold text-yellow-400">4:30 م</p>
         <p class="text-sm text-gray-400">كشف الغياب + السلوك</p>
        </div>
        <div class="text-center p-4">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center">
-         <span class="text-xl">📄</span>
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center"><span class="text-xl">📄</span>
         </div>
         <p class="font-bold text-yellow-400">5:00 م</p>
         <p class="text-sm text-gray-400">أوراق الامتحانات</p>
        </div>
        <div class="text-center p-4">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center">
-         <span class="text-xl">📁</span>
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center"><span class="text-xl">📁</span>
         </div>
         <p class="font-bold text-yellow-400">5:30 م</p>
         <p class="text-sm text-gray-400">تسليم فايلات التصحيح</p>
        </div>
        <div class="text-center p-4">
-        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center">
-         <span class="text-xl">✅</span>
+        <div class="w-12 h-12 mx-auto mb-3 rounded-full gold-bg flex items-center justify-center"><span class="text-xl">✅</span>
         </div>
         <p class="font-bold text-yellow-400">6:00 م</p>
         <p class="text-sm text-gray-400">استلام التصحيح</p>
@@ -710,7 +810,7 @@
    <footer class="card-glass mt-8 py-6">
     <div class="max-w-7xl mx-auto px-4 text-center">
      <p class="text-gray-400 text-sm">مجموعة الكنترول - امتحانات الميدترم مارس 2026</p>
-     <p class="text-yellow-400 text-xs mt-2">✝️ بركة صلوات أبينا القديس البابا كيرلس السادس تكون معنا</p>
+     <p class="text-yellow-400 text-xs mt-2">✝️ بركة صلوات امنا العذراء مريم والقديس ماريوحنا الحبيب تكون معنا</p>
     </div>
    </footer>
   </div>
@@ -718,11 +818,11 @@
     const defaultConfig = {
       main_title: 'تنظيم عمل مجموعة الكنترول',
       exam_period: 'امتحانات الميدترم – مارس 2026',
-      background_color: '#1a1a2e',
-      accent_color: '#d4a853',
+      background_color: '#0a0e27',
+      accent_color: '#f4d03f',
       text_color: '#ffffff',
-      card_color: '#16213e',
-      secondary_text_color: '#9ca3af'
+      card_color: '#1a1a3e',
+      secondary_text_color: '#b0b5c1'
     };
 
     function scrollToSection(sectionId) {
@@ -827,5 +927,5 @@
       observer.observe(el);
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d7164ddf7fce27d',t:'MTc3MjYzMjY4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d74b2a440dde1e9',t:'MTc3MjY2NzMzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
